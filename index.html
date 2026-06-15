@@ -122,17 +122,35 @@
 
   .chat{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#ff0051;box-shadow:0 8px 24px rgba(255,0,81,.4);z-index:50}
   @media(max-width:900px){.hero-in,.grid3,.sblock{grid-template-columns:1fr}.hero-l h1{font-size:38px}.fcols{grid-template-columns:1fr 1fr}}
+  /* region switcher */
+  .regionswitch{position:relative}
+  .globe{cursor:pointer}
+  .regionmenu{position:absolute;right:0;top:40px;background:#fff;border:1px solid #e6e8eb;border-radius:12px;box-shadow:0 12px 34px rgba(31,35,35,.16);padding:6px;min-width:196px;z-index:60;display:none}
+  .regionmenu.open{display:block}
+  .regionmenu .rhead{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#9aa1a1;font-weight:700;padding:8px 12px 6px}
+  .regionmenu button{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;text-align:left;font-family:'Poppins',sans-serif;font-size:14px;color:#1f2323;padding:9px 12px;border-radius:8px;cursor:pointer}
+  .regionmenu button:hover{background:#f7f5f7}
+  .regionmenu button.active{font-weight:600}
+  .regionmenu button.active::after{content:"";width:7px;height:7px;border-radius:50%;background:#ff0051}
 </style>
 </head>
 <body>
 
-  <div class="ann">Trúng áo đấu chính thức có chữ ký của đội tuyển Argentina cùng WorldFirst <a href="#how">Xem cách tham gia</a></div>
+  <div class="ann">Trúng áo đấu có chữ ký của đội tuyển quốc gia Argentina cùng WorldFirst <a href="#how">Xem cách tham gia</a></div>
 
   <div class="nav">
     <img class="logo" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/logo.svg" alt="WorldFirst">
     <div class="mid"><a href="#">Doanh nghiệp</a><a href="#">Doanh nghiệp lớn</a><a href="#">Về chúng tôi</a></div>
     <div class="right">
-      <div class="globe"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/globe.webp" alt=""></div>
+      <div class="regionswitch">
+        <div class="globe" id="globeBtn"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/globe.webp" alt="Chọn khu vực"></div>
+        <div class="regionmenu" id="regionMenu">
+          <div class="rhead">Chọn thị trường của bạn</div>
+          <button data-region-tab="sg">Singapore</button>
+          <button data-region-tab="vn">Việt Nam</button>
+          <button data-region-tab="sea">Đông Nam Á</button>
+        </div>
+      </div>
       <a class="login" href="#">Đăng nhập</a><a class="signup" href="#">Đăng ký</a>
     </div>
   </div>
@@ -142,17 +160,17 @@
     <div class="wrap hero-in">
       <div class="hero-l">
         <h1>Trúng áo đấu có chữ ký của đội tuyển <span class="rose">Argentina</span></h1>
-        <p class="sub">Chi tiêu bằng thẻ World Card của bạn, dù là thẻ mới hay thẻ hiện có, trong thời gian khuyến mãi để có cơ hội trúng một chiếc áo đấu chính thức của đội tuyển Argentina, có chữ ký của đội tuyển, bao gồm đội trưởng.</p>
+        <p class="sub">Chi tiêu bằng World Card để có cơ hội trúng một chiếc.</p>
         <div class="cta-row">
-          <a class="btn primary" href="#" style="font-size:16px;padding:14px 30px">Mở thẻ World Card</a>
-          <a class="seerules" href="rules.html">Xem thể lệ đầy đủ &rarr;</a>
+          <a class="btn primary card-link" href="#" style="font-size:16px;padding:14px 30px">Mở World Card</a>
+          <a class="seerules rules-link" href="rules.html">Xem thể lệ đầy đủ &rarr;</a>
         </div>
-        <p class="micro">Áp dụng cho khách hàng doanh nghiệp đủ điều kiện tại <span class="tbd">Việt Nam</span>, là chủ thẻ World Card mới hoặc hiện có. Đạt mức chi tiêu hợp lệ <span class="tbd">1.500 USD</span> bằng thẻ World Card trong khoảng thời gian từ <span class="tbd">16 tháng 6 năm 2026</span> đến <span class="tbd">15 tháng 8 năm 2026 (giờ Anh)</span>. Mỗi khách hàng được một lượt tham gia.</p>
+        <p class="micro">Khách hàng mới và khách hàng hiện hữu. Đạt mức chi tiêu <span class="tbd" data-rv="threshold">1.500 USD</span> bằng World Card trong khoảng từ <span class="tbd">ngày 18 tháng 6 năm 2026</span> đến <span class="tbd">ngày 17 tháng 8 năm 2026</span>. Mỗi doanh nghiệp tại <span class="tbd" data-rv="market">Việt Nam</span> được một lượt tham gia.</p>
       </div>
       <div class="hero-r">
         <div class="photopanel">
-          <img class="team" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_4.png" alt="Đội tuyển Argentina trong trang phục chính thức">
-          <span class="herolock" style="position:absolute;left:18px;top:18px;display:inline-flex;flex-direction:column;align-items:center;gap:9px;filter:drop-shadow(0 2px 9px rgba(0,0,0,.6))"><span style="display:inline-flex;align-items:center;gap:12px"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/afa_crest_color.svg" alt="AFA" style="height:52px"><span style="width:1px;height:36px;background:rgba(255,255,255,.6)"></span><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/logo.svg" alt="WorldFirst" style="height:21px;filter:brightness(0) invert(1)"></span><span style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.35">Nhà tài trợ khu vực chính thức của<br>Đội tuyển bóng đá quốc gia Argentina</span></span>
+          <img class="team" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_4.png" alt="Đội tuyển quốc gia Argentina trong trang phục thi đấu chính thức">
+          <span class="herolock" style="position:absolute;left:18px;top:18px;display:inline-flex;flex-direction:column;align-items:center;gap:9px;filter:drop-shadow(0 2px 9px rgba(0,0,0,.6))"><span style="display:inline-flex;align-items:center;gap:12px"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/afa_crest_color.svg" alt="AFA" style="height:52px"><span style="width:1px;height:36px;background:rgba(255,255,255,.6)"></span><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/logo.svg" alt="WorldFirst" style="height:21px;filter:brightness(0) invert(1)"></span><span style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.35">Nhà tài trợ khu vực chính thức của<br>Đội tuyển Bóng đá Quốc gia Argentina</span></span>
         </div>
       </div>
     </div>
@@ -162,63 +180,89 @@
   <section class="how wrap" id="how">
     <h2 class="sechead"><span class="rose">Cách</span> tham gia</h2>
     <div class="grid3">
-      <div class="fcard"><div class="step">BƯỚC 1</div><h3>Sở hữu thẻ World Card</h3><p>Cả chủ thẻ mới và hiện có đều đủ điều kiện. Hãy mở thẻ nếu bạn chưa có, hoàn toàn miễn phí.</p><div class="arrow"></div></div>
-      <div class="fcard"><div class="step">BƯỚC 2</div><h3>Đạt mức chi tiêu hợp lệ</h3><p>Chi tiêu tổng cộng từ <span class="tbd">1.500 USD</span> trở lên bằng thẻ World Card trong thời gian khuyến mãi.</p><div class="arrow"></div></div>
-      <div class="fcard"><div class="step">BƯỚC 3</div><h3>Bạn được vào danh sách quay thưởng</h3><p>Không cần làm thêm bước nào. Một người thắng cuộc được chọn ngẫu nhiên tại thị trường của bạn vào ngày quay thưởng.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 1</div><h3>Có một chiếc World Card</h3><p>Khách hàng mới hay hiện hữu đều được. Nếu bạn chưa có, chỉ mất vài phút để mở.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 2</div><h3>Chi tiêu <span class="tbd" data-rv="threshold">1.500 USD</span></h3><p>Đạt mức tổng chi tiêu <span class="tbd" data-rv="threshold">1.500 USD</span> bằng World Card trong thời gian diễn ra chương trình.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 3</div><h3>Bạn đã có mặt trong lượt rút thăm</h3><p>Không cần điền biểu mẫu, không cần đăng ký. Người trúng giải được chọn ngẫu nhiên.</p><div class="arrow"></div></div>
     </div>
   </section>
 
   <!-- PRIZE -->
   <section class="sol wrap">
     <div class="sblock">
-      <div class="vis"><div class="prizevis photo"><img class="bg" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_5.png" alt="Đội tuyển Argentina trong trang phục chính thức"><div class="scrim"></div><img class="cr" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/afa_crest_color.svg" alt="AFA"><div class="big">3</div><div class="lab">áo đấu có chữ ký của đội tuyển Argentina</div></div></div>
+      <div class="vis"><div class="prizevis photo"><img class="bg" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_5.png" alt="Đội tuyển quốc gia Argentina trong trang phục thi đấu chính thức"><div class="scrim"></div><img class="cr" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/afa_crest_color.svg" alt="AFA"><div class="big">3</div><div class="lab">áo đấu có chữ ký của đội tuyển Argentina</div></div></div>
       <div class="txt">
         <div class="eyebrow">Giải thưởng</div>
-        <h2>Ba chiếc áo đấu của đội tuyển Argentina có chữ ký</h2>
-        <p>Ba chiếc áo đấu có chữ ký trên khắp các thị trường tham gia, một người thắng cuộc được chọn tại Việt Nam, áo có chữ ký của đội tuyển, bao gồm đội trưởng, được rút thăm ngẫu nhiên từ tất cả người tham gia đủ điều kiện. Ngày quay thưởng <span class="tbd">31 tháng 8 năm 2026</span>.</p>
-        <p>Giải thưởng chỉ là chiếc áo đấu có chữ ký. Không có lựa chọn quy đổi thành tiền mặt.</p>
-        <a class="more" href="rules.html">Xem thể lệ đầy đủ</a>
+        <h2>Có chữ ký của đội tuyển, bao gồm đội trưởng</h2>
+        <p>Ba chiếc áo đấu chính thức của Argentina, mỗi chiếc đều được ký tay và xác thực bởi Liên đoàn Bóng đá Argentina, được rút thăm ngẫu nhiên vào <span class="tbd">ngày 31 tháng 8 năm 2026</span>. Chỉ gồm chiếc áo đấu, không quy đổi thành tiền mặt.</p>
+        <a class="more rules-link" href="rules.html">Xem thể lệ đầy đủ</a>
       </div>
     </div>
 
     <div class="sblock">
       <div class="txt">
         <div class="eyebrow">Tôi có đủ điều kiện không?</div>
-        <h2>Mở thẻ, thực hiện thanh toán, bạn đã tham gia</h2>
+        <h2>Cứ chi tiêu là bạn đã tham gia</h2>
         <div class="checks">
-          <div><span class="ck"></span>Bạn có thẻ World Card, mới hoặc hiện có, mở thẻ miễn phí</div>
-          <div><span class="ck"></span>Bạn đạt mức chi tiêu hợp lệ trong thời gian khuyến mãi</div>
-          <div><span class="ck"></span>Tài khoản của bạn đang hoạt động và ở trạng thái tốt</div>
+          <div><span class="ck"></span>Một chiếc World Card, mới hoặc hiện hữu (mở miễn phí)</div>
+          <div><span class="ck"></span><span class="tbd" data-rv="threshold">1.500 USD</span> tổng chi tiêu trong thời gian diễn ra chương trình</div>
+          <div><span class="ck"></span>Một tài khoản đang ở trạng thái tốt</div>
         </div>
-        <a class="more" href="rules.html">Đọc điều khoản đầy đủ</a>
+        <a class="more rules-link" href="rules.html">Đọc điều khoản đầy đủ</a>
       </div>
-      <div class="vis"><div class="photovis"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_2.png" alt="Đội tuyển Argentina trong trang phục chính thức"></div></div>
+      <div class="vis"><div class="photovis"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_2.png" alt="Đội tuyển quốc gia Argentina trong trang phục thi đấu chính thức"></div></div>
     </div>
   </section>
 
   <!-- FOOTER CTA -->
   <section class="fcta">
-    <h2>Mở thẻ. Thực hiện thanh toán. Trúng áo đấu có chữ ký của Argentina.</h2>
-    <p>Chính chiếc thẻ World Card giúp bạn tiết kiệm trên mọi chi phí kinh doanh có thể mang về cho bạn một chiếc áo đấu chính thức của đội tuyển Argentina, có chữ ký của đội tuyển, bao gồm đội trưởng.</p>
-    <div class="row"><a class="g" href="#">Mở thẻ World Card</a><a class="c" href="rules.html">Xem thể lệ đầy đủ</a></div>
+    <h2>Đang chi tiêu ở nước ngoài? Điều đó có thể giúp bạn trúng một chiếc áo đấu.</h2>
+    <p>World Card giúp bạn tiết kiệm trên mỗi giao dịch xuyên biên giới. Đến hết ngày 17 tháng 8, chính khoản chi tiêu đó sẽ đưa bạn vào lượt rút thăm.</p>
+    <div class="row"><a class="g card-link" href="#">Mở World Card</a><a class="c rules-link" href="rules.html">Xem thể lệ đầy đủ</a></div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="wrap">
       <div class="fcols">
-        <div><h4>Sản phẩm</h4><a>World Account</a><a>Nhận tiền</a><a>Thanh toán</a><a>Đổi ngoại tệ</a><a>World Card</a></div>
-        <div><h4>Giải pháp</h4><a>Giải pháp cho nhà bán thương mại điện tử</a><a>Giải pháp thanh toán doanh nghiệp</a><a>Giải pháp thanh toán vào Trung Quốc</a></div>
-        <div><h4>Tài nguyên</h4><a>Hướng dẫn sử dụng</a><a>Câu hỏi thường gặp</a><a>Tài nguyên cho đối tác</a></div>
+        <div><h4>Sản phẩm</h4><a>World Account</a><a>Nhận tiền</a><a>Thanh toán</a><a>Ngoại hối</a><a>World Card</a></div>
+        <div><h4>Giải pháp</h4><a>Giải pháp cho người bán thương mại điện tử</a><a>Giải pháp thanh toán doanh nghiệp</a><a>Giải pháp thanh toán vào Trung Quốc</a></div>
+        <div><h4>Tài nguyên</h4><a>Hướng dẫn sử dụng</a><a>Câu hỏi thường gặp</a><a>Tài nguyên dành cho đối tác</a></div>
         <div><h4>Bảo mật</h4><a>Pháp lý</a><a>Tuân thủ</a><a>Khiếu nại</a><a>Chính sách quyền riêng tư</a></div>
         <div><h4>Công ty</h4><a>Về WorldFirst</a><a>Vì sao chọn WorldFirst</a><a>Liên hệ</a><a>Giới thiệu và nhận thưởng</a></div>
-        <div class="news"><h4>Đăng ký nhận bản tin</h4><div class="sub"><input placeholder="Nhập email của bạn"><button>Đăng ký</button></div></div>
+        <div class="news"><h4>Đăng ký nhận bản tin của chúng tôi</h4><div class="sub"><input placeholder="Nhập email của bạn"><button>Đăng ký</button></div></div>
       </div>
-      <div class="legal">WorldFirst là một phần của hệ sinh thái Ant International / Alipay+, một Nhà tài trợ khu vực chính thức của Đội tuyển bóng đá quốc gia Argentina. Logo AFA, hình ảnh đội tuyển quốc gia Argentina và các nhãn hiệu liên quan được sử dụng theo giấy phép thông qua Ant International. Chương trình khuyến mãi áp dụng cho chủ thẻ World Card doanh nghiệp đủ điều kiện (mới hoặc hiện có) tại Việt Nam, từ <span class="tbd">16 tháng 6 năm 2026</span> đến <span class="tbd">15 tháng 8 năm 2026 (giờ Anh)</span>. Giải thưởng là một chiếc áo đấu chính thức của đội tuyển quốc gia Argentina, có chữ ký tay của đội tuyển, bao gồm đội trưởng; không có lựa chọn quy đổi thành tiền mặt. Không nêu tên cầu thủ cá nhân và không hàm ý sự chứng thực của bất kỳ cầu thủ cá nhân nào.</div>
-      <div class="fbar"><span>&copy; 2026, WorldFirst. Vận hành bởi <span class="tbd">World First (pháp nhân Việt Nam, sẽ xác nhận)</span>.</span><span>&#127760; Toàn cầu</span></div>
+      <div class="legal">WorldFirst là một phần của hệ sinh thái Ant International / Alipay+, một Nhà tài trợ khu vực chính thức của Đội tuyển Bóng đá Quốc gia Argentina. Huy hiệu AFA, hình ảnh đội tuyển quốc gia Argentina và các nhãn hiệu liên quan được sử dụng theo giấy phép thông qua Ant International. Chương trình mở cho các chủ thẻ World Card doanh nghiệp đủ điều kiện (mới hoặc hiện hữu) tại <span class="tbd" data-rv="market">Việt Nam</span>, từ <span class="tbd">ngày 18 tháng 6 năm 2026</span> đến <span class="tbd">ngày 17 tháng 8 năm 2026</span>. Giải thưởng là một chiếc áo đấu chính thức của đội tuyển quốc gia Argentina có chữ ký, được ký tay bởi đội tuyển bao gồm đội trưởng; không quy đổi thành tiền mặt. Không nêu tên cầu thủ riêng lẻ và không ngụ ý bất kỳ sự chứng thực nào từ cầu thủ riêng lẻ.</div>
+      <div class="fbar"><span>&copy; 2026, WorldFirst. Vận hành bởi World First Asia Pte. Ltd., Singapore.</span><span>&#127760; Toàn cầu</span></div>
     </div>
   </footer>
 
   <div class="chat"></div>
+<script>
+const RBASE="https://socialworldfirst.github.io";
+const REGIONS={
+  sg:{market:"Singapore",threshold:"3.000 USD",rules:RBASE+"/worldfirst-argentina-sg/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=en-GB&region=SG"},
+  vn:{market:"Việt Nam",threshold:"1.500 USD",rules:RBASE+"/worldfirst-argentina-vn-vi/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=vi-VN&region=VN"},
+  sea:{market:"Đông Nam Á",threshold:"500 USD",rules:RBASE+"/worldfirst-argentina-sea/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=en-GB&region=MY"}
+};
+const DEFAULT_REGION="vn";
+function setRegion(k){
+  const r=REGIONS[k]; if(!r)return;
+  document.querySelectorAll('[data-rv="market"]').forEach(e=>e.textContent=r.market);
+  document.querySelectorAll('[data-rv="threshold"]').forEach(e=>e.textContent=r.threshold);
+  document.querySelectorAll('a.rules-link').forEach(a=>a.setAttribute('href',r.rules));
+  document.querySelectorAll('a.card-link').forEach(a=>a.setAttribute('href',r.card));
+  document.querySelectorAll('[data-region-tab]').forEach(b=>b.classList.toggle('active',b.dataset.regionTab===k));
+}
+(function(){
+  const g=document.getElementById('globeBtn'), m=document.getElementById('regionMenu');
+  if(g&&m){
+    g.addEventListener('click',e=>{e.stopPropagation();m.classList.toggle('open');});
+    document.addEventListener('click',()=>m.classList.remove('open'));
+    m.addEventListener('click',e=>e.stopPropagation());
+    m.querySelectorAll('[data-region-tab]').forEach(b=>b.addEventListener('click',()=>{setRegion(b.dataset.regionTab);m.classList.remove('open');}));
+  }
+  setRegion(DEFAULT_REGION);
+})();
+</script>
 </body>
 </html>
