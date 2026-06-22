@@ -149,24 +149,22 @@
   .regionmenu button.active::after{content:"";width:7px;height:7px;border-radius:50%;background:#ff0051}
 
   /* why world card (jun22 version) */
-  .why{padding:50px 0 42px}
-  .whyblock{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-  .why-l .weyebrow{font-family:'Satoshi',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff0051;font-weight:700;margin-bottom:11px}
-  .why-l h2{font-size:34px;font-weight:600;letter-spacing:-.5px;line-height:1.15}
-  .why-l .lead{font-size:15px;color:#5b626a;line-height:1.6;margin:14px 0 26px;max-width:480px}
-  .whylist{display:flex;flex-direction:column;gap:19px}
-  .wrow{display:flex;gap:14px;align-items:flex-start}
-  .wk{width:34px;height:34px;border-radius:9px;background:#fff;border:1.5px solid #ffd0de;display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px}
-  .wk svg{width:17px;height:17px;stroke:#ff0051;fill:none;stroke-width:1.7}
-  .wrow b{display:block;font-size:16.5px;font-weight:600;color:#1f2323;margin-bottom:3px;letter-spacing:-.2px}
-  .wrow span{font-size:13.8px;color:#5b626a;line-height:1.5}
-  .whyvis{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:radial-gradient(125% 120% at 68% 30%,#fdeef4 0%,#f5f1fb 52%,#edf0fb 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 26px 54px rgba(31,35,35,.13)}
-  .whyvis img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
-  .why-tie{text-align:center;font-size:16px;color:#1f2323;max-width:700px;margin:40px auto 0;line-height:1.62}
+  .why{padding:46px 0 38px}
+  .why-head{text-align:center;max-width:680px;margin:0 auto}
+  .why .weyebrow{font-family:'Satoshi',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff0051;font-weight:700;margin-bottom:10px}
+  .why-head h2{font-size:32px;font-weight:600;letter-spacing:-.5px;line-height:1.16}
+  .why .lead{font-size:15px;color:#5b626a;line-height:1.6;margin:14px auto 0;max-width:580px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .bcard{background:#f7f5f7;border-radius:16px;padding:26px 24px;min-height:166px}
+  .bk{width:34px;height:34px;border-radius:9px;border:1.5px solid #ff0051;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .bk svg{width:18px;height:18px;stroke:#ff0051;fill:none;stroke-width:1.7}
+  .bcard h3{font-size:19px;font-weight:600;letter-spacing:-.3px;margin-bottom:9px}
+  .bcard p{font-size:13.7px;color:#5b626a;line-height:1.55}
+  .why-tie{text-align:center;font-size:16px;color:#1f2323;max-width:700px;margin:30px auto 0;line-height:1.62}
   .why-promo{text-align:center;font-size:13.5px;color:#ff0051;font-weight:600;margin:14px auto 0;max-width:620px}
   .why-promo:empty{display:none}
   .why-fine{text-align:center;font-size:12px;color:#9aa1a1;margin:12px auto 0;max-width:560px;line-height:1.6}
-  @media(max-width:900px){.whyblock{grid-template-columns:1fr;gap:26px}.whyvis{aspect-ratio:5/4;max-width:440px;margin:0 auto;width:100%}.wrow span{max-width:none}}
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -250,15 +248,12 @@
 
   <!-- WHY WORLD CARD (jun22 version) -->
   <section class="why wrap">
-    <div class="whyblock">
-      <div class="why-l">
-        <div class="weyebrow">Vì sao chọn World Card</div>
-        <h2>Nơi tốt hơn cho khoản chi bạn vẫn đang thực hiện</h2>
-        <p class="lead">World Card là thẻ doanh nghiệp của WorldFirst dành cho thanh toán xuyên biên giới, nhà cung cấp, nền tảng quảng cáo, phần mềm và du lịch, tất cả từ một tài khoản đa tiền tệ.</p>
-        <div class="whylist"><div class="wrow"><span class="wk"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><line x1="2.5" y1="9.5" x2="21.5" y2="9.5"/></svg></span><div><b data-why="t1"></b><span data-why="b1"></span></div></div><div class="wrow"><span class="wk"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" r="3"/><circle cx="16.5" cy="16.5" r="3"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span><div><b data-why="t2"></b><span data-why="b2"></span></div></div><div class="wrow"><span class="wk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 13.5 0 18M12 3c-3 3.5-3 13.5 0 18"/></svg></span><div><b data-why="t3"></b><span data-why="b3"></span></div></div></div>
-      </div>
-      <div class="whyvis"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/wc_card.png" alt="WorldFirst World Card" loading="lazy"></div>
+    <div class="why-head">
+      <div class="weyebrow">Vì sao chọn World Card</div>
+      <h2>Nơi tốt hơn cho khoản chi bạn vẫn đang thực hiện</h2>
+      <p class="lead">World Card là thẻ doanh nghiệp của WorldFirst dành cho thanh toán xuyên biên giới, nhà cung cấp, nền tảng quảng cáo, phần mềm và du lịch, tất cả từ một tài khoản đa tiền tệ.</p>
     </div>
+    <div class="why-grid"><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><line x1="2.5" y1="9.5" x2="21.5" y2="9.5"/></svg></div><h3 data-why="t1"></h3><p data-why="b1"></p></div><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" r="3"/><circle cx="16.5" cy="16.5" r="3"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><h3 data-why="t2"></h3><p data-why="b2"></p></div><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 13.5 0 18M12 3c-3 3.5-3 13.5 0 18"/></svg></div><h3 data-why="t3"></h3><p data-why="b3"></p></div></div>
     <p class="why-tie">Hãy đưa khoản chi bạn vẫn đang thực hiện lên World Card: bạn tiết kiệm phí và nhận hoàn tiền, và cứ mỗi <span class="tbd" data-rv="threshold">US$1,000</span> lại có thêm một lượt quay trúng áo đấu có chữ ký.</p>
     <p class="why-promo" data-why="promo"></p>
     <p class="why-fine" data-why="fine"></p>
