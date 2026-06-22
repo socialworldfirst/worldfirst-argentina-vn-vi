@@ -109,8 +109,8 @@
   .sblock h2{font-size:34px;font-weight:600;line-height:1.16;letter-spacing:-.5px}
   .sblock p{font-size:15px;color:#5b626a;line-height:1.6;margin-top:16px;max-width:450px}
   .checks{display:grid;grid-template-columns:1fr;gap:12px;border:1px solid #e6e8eb;border-radius:14px;padding:20px 24px;margin-top:20px;max-width:450px}
-  .checks div{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:#1f2323;line-height:1.5}
-  .checks .ck{width:20px;height:20px;border-radius:50%;background:#ff0051;flex:none;position:relative;margin-top:1px}
+  .checks div{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#1f2323}
+  .checks .ck{width:20px;height:20px;border-radius:50%;background:#ff0051;flex:none;position:relative}
   .checks .ck::after{content:"";position:absolute;left:6px;top:4px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
   .sblock .more{margin-top:20px}
 
@@ -146,11 +146,37 @@
   .regionmenu button:hover{background:#f7f5f7}
   .regionmenu button.active{font-weight:600}
   .regionmenu button.active::after{content:"";width:7px;height:7px;border-radius:50%;background:#ff0051}
+
+  /* why world card (jun22 version) */
+  .why{padding:46px 0 38px}
+  .why-head{text-align:center;max-width:960px;margin:0 auto}
+  .why .weyebrow{font-family:'Satoshi',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff0051;font-weight:700;margin-bottom:10px}
+  .why-head h2{font-size:32px;font-weight:600;letter-spacing:-.6px;line-height:1.16}
+  .why .lead{font-size:15px;color:#5b626a;line-height:1.6;margin:14px auto 0;max-width:580px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .bcard{background:#f7f5f7;border-radius:16px;padding:26px 24px;min-height:166px}
+  .bk{width:34px;height:34px;border-radius:9px;border:1.5px solid #ff0051;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .bk svg{width:18px;height:18px;stroke:#ff0051;fill:none;stroke-width:1.7}
+  .bcard h3{font-size:19px;font-weight:600;letter-spacing:-.3px;margin-bottom:9px}
+  .bcard p{font-size:13.7px;color:#5b626a;line-height:1.55}
+  .why-tie{text-align:center;font-size:16px;color:#1f2323;max-width:700px;margin:30px auto 0;line-height:1.62}
+  /* promo callout */
+  .promo{display:none;align-items:center;gap:16px;max-width:610px;margin:24px auto 0;padding:15px 22px 15px 18px;border:1px solid #ffd0de;border-radius:16px;background:linear-gradient(100deg,#fff3f7 0%,#fffafb 70%);box-shadow:0 12px 30px rgba(255,0,81,.08)}
+  .promo.on{display:flex}
+  .promo-badge{display:inline-flex;align-items:center;gap:5px;font-family:'Satoshi',sans-serif;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:#fff;background:#ff0051;border-radius:999px;padding:7px 12px;white-space:nowrap;flex:none}
+  .promo-badge svg{width:12px;height:12px;fill:#fff}
+  .promo-txt{text-align:left}
+  .promo-main{font-size:16px;font-weight:600;color:#1f2323;letter-spacing:-.2px;line-height:1.25;white-space:nowrap}
+  .promo-rate{font-family:'Satoshi',sans-serif;font-weight:900;color:#ff0051}
+  .promo-sub{font-size:12.5px;color:#8a9099;margin-top:3px;line-height:1.4}
+  .why-fine{text-align:center;font-size:12px;color:#9aa1a1;margin:14px auto 0;max-width:560px;line-height:1.6}
+  @media(min-width:901px){.why-head h2{white-space:nowrap}}
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr}.promo{flex-direction:column;text-align:center}.promo-txt{text-align:center}.promo-main{white-space:normal}}
 </style>
 </head>
 <body>
 
-  <div class="ann">Cơ hội nhận áo đấu có chữ ký của Đội tuyển Quốc gia Argentina cùng WorldFirst <a href="#how">Xem cách tham gia</a></div>
+  <div class="ann">Trúng áo đấu đội tuyển quốc gia Argentina có chữ ký cùng WorldFirst <a href="#how">Xem cách tham gia</a></div>
 
   <div class="nav">
     <img class="logo" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/logo.svg" alt="WorldFirst">
@@ -159,7 +185,7 @@
       <div class="regionswitch">
         <div class="globe" id="globeBtn"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/globe.webp" alt="Chọn khu vực"></div>
         <div class="regionmenu" id="regionMenu">
-          <div class="rhead">Chọn thị trường</div>
+          <div class="rhead">Chọn thị trường của bạn</div>
           <button data-region-tab="sg">Singapore</button>
           <button data-region-tab="sea">Đông Nam Á</button>
         </div>
@@ -172,13 +198,13 @@
   <section class="hero">
     <div class="wrap hero-in">
       <div class="hero-l">
-        <h1>Nhận ngay áo thi đấu có chữ ký của Đội tuyển <span class="rose">Argentina</span></h1>
-        <p class="sub">Chi tiêu với thẻ World Card để có cơ hội sở hữu chiếc áo thi đấu đặc biệt này.</p>
+        <h1>Trúng áo đấu đội tuyển <span class="rose">Argentina</span> có chữ ký</h1>
+        <p class="sub">Chi tiêu bằng World Card để có cơ hội trúng một chiếc.</p>
         <div class="cta-row">
           <a class="btn primary card-link" href="#" style="font-size:16px;padding:14px 30px">Mở World Card</a>
-          <a class="seerules rules-link" href="https://socialworldfirst.github.io/worldfirst-argentina-sea/rules.html">Xem thể lệ đầy đủ &rarr;</a>
+          <a class="seerules rules-link" href="rules.html">Xem thể lệ đầy đủ &rarr;</a>
         </div>
-        <p class="micro">Áp dụng cho cả khách hàng mới và hiện tại. Với mỗi <span class="tbd" data-rv="threshold">$1,000</span> (hoặc tương đương) chi tiêu với thẻ World Card từ <span class="tbd">18/06/2026</span> đến <span class="tbd">17/08/2026</span>, bạn sẽ nhận được một lượt rút thăm trúng thưởng. Chương trình dành riêng cho các khách hàng đủ điều kiện tại khu vực <span class="tbd" data-rv="market">Đông Nam Á</span>.</p>
+        <p class="micro">Dành cho khách hàng mới và hiện hữu. Mỗi <span class="tbd" data-rv="threshold">US$1,000</span>, hoặc tương đương, chi tiêu bằng World Card trong thời gian khuyến mại sẽ nhận được một lượt quay trong chương trình rút thăm may mắn, từ <span class="tbd">ngày 18 tháng 6 năm 2026</span> đến <span class="tbd">ngày 17 tháng 8 năm 2026</span>. Áp dụng cho các doanh nghiệp đủ điều kiện tại <span class="tbd" data-rv="market">Đông Nam Á</span>.</p>
       </div>
       <div class="hero-r">
         <div class="photopanel">
@@ -193,9 +219,9 @@
   <section class="how wrap" id="how">
     <h2 class="sechead"><span class="rose">Cách</span> tham gia</h2>
     <div class="grid3">
-      <div class="fcard"><div class="step">BƯỚC 1</div><h3>Sở hữu thẻ World Card</h3><p>Dành cho khách hàng mới và hiện tại. Nếu chưa có World Card, bạn hãy đăng kí mở thẻ ngay.</p><div class="arrow"></div></div>
-      <div class="fcard"><div class="step">BƯỚC 2</div><h3>Chi tiêu với thẻ World Card</h3><p>Với mỗi <span class="tbd" data-rv="threshold">$1,000</span> (hoặc tương đương) chi tiêu hợp lệ, bạn sẽ nhận được một lượt rút thăm. Tối đa 10 lượt rút thăm cho một khách hàng. Chi tiêu càng nhiều, cơ hội trúng thưởng càng cao.</p><div class="arrow"></div></div>
-      <div class="fcard"><div class="step">BƯỚC 3</div><h3>Bạn đã có một lượt rút thăm</h3><p>Không cần điền form hay đăng ký thêm. Người thắng giải sẽ được chọn ngẫu nhiên.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 1</div><h3>Sở hữu một World Card</h3><p>Mới hoặc hiện hữu. Nếu bạn chưa có, chỉ mất vài phút để mở thẻ.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 2</div><h3>Chi tiêu bằng World Card</h3><p>Mỗi <span class="tbd" data-rv="threshold">US$1,000</span>, hoặc tương đương, chi tiêu hợp lệ sẽ nhận được một lượt quay. Chi tiêu càng nhiều, càng nhiều lượt quay.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">BƯỚC 3</div><h3>Bạn đã có mặt trong vòng quay</h3><p>Không cần điền biểu mẫu, không cần đăng ký. Người trúng giải được chọn ngẫu nhiên.</p><div class="arrow"></div></div>
     </div>
   </section>
 
@@ -205,32 +231,52 @@
       <div class="vis"><div class="prizevis photo"><img class="bg" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_5.png" alt="Đội tuyển quốc gia Argentina trong trang phục thi đấu chính thức"><div class="scrim"></div><img class="cr" src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/afa_crest_color.svg" alt="AFA"><div class="big">3</div><div class="lab">áo đấu đội tuyển Argentina có chữ ký</div></div></div>
       <div class="txt">
         <div class="eyebrow">Giải thưởng</div>
-        <h2>Áo đấu có chữ ký của đội tuyển, bao gồm cả đội trưởng</h2>
-        <p>Ba chiếc áo thi đấu chính thức của Đội tuyển Argentina, mỗi chiếc được ký tay trực tiếp và xác thực bởi Hiệp hội Bóng đá Argentina (AFA), sẽ được trao cho 3 người thắng giải được rút thăm ngẫu nhiên vào <span class="tbd">31/08/2026</span>. Giải thưởng chỉ bao gồm áo đấu, không có giải thưởng tiền mặt thay thế.</p>
-        <a class="more rules-link" href="https://socialworldfirst.github.io/worldfirst-argentina-sea/rules.html">Xem thể lệ đầy đủ</a>
+        <h2>Có chữ ký của đội tuyển, bao gồm đội trưởng</h2>
+        <p>Ba chiếc áo đấu Argentina chính thức, mỗi chiếc đều được ký tay và xác thực bởi Liên đoàn Bóng đá Argentina, được rút thăm ngẫu nhiên vào <span class="tbd">ngày 31 tháng 8 năm 2026</span>. Chỉ áo đấu, không quy đổi thành tiền mặt.</p>
+        <a class="more rules-link" href="rules.html">Xem thể lệ đầy đủ</a>
       </div>
     </div>
 
     <div class="sblock">
       <div class="txt">
-        <div class="eyebrow">Tôi có đủ điều kiện tham gia không?</div>
-        <h2>Cứ chi tiêu là bạn sẽ được tham gia</h2>
+        <div class="eyebrow">Tôi có đủ điều kiện không?</div>
+        <h2>Cứ chi tiêu là bạn được tham gia</h2>
         <div class="checks">
-          <div><span class="ck"></span><span>Sở hữu thẻ World Card (cả khách hàng mới hoặc khách hàng hiện hữu, miễn phí mở thẻ)</span></div>
-          <div><span class="ck"></span><span>Với mỗi <span class="tbd" data-rv="threshold">$1,000</span> (hoặc tương đương) chi tiêu hợp lệ với thẻ World Card, bạn sẽ nhận được một lượt rút thăm. Tối đa 10 lượt rút thăm cho một khách hàng. Chi tiêu càng nhiều, cơ hội trúng thưởng càng cao.</span></div>
-          <div><span class="ck"></span><span>Tài khoản đang hoạt động bình thường</span></div>
+          <div><span class="ck"></span>Một World Card, mới hoặc hiện hữu (mở thẻ miễn phí)</div>
+          <div><span class="ck"></span>Mỗi <span class="tbd" data-rv="threshold">US$1,000</span> chi tiêu bằng World Card nhận được một lượt quay</div>
+          <div><span class="ck"></span>Tài khoản trong trạng thái tốt</div>
         </div>
-        <a class="more rules-link" href="https://socialworldfirst.github.io/worldfirst-argentina-sea/rules.html">Tham khảo đầy đủ điều khoản</a>
+        <a class="more rules-link" href="rules.html">Đọc điều khoản đầy đủ</a>
       </div>
       <div class="vis"><div class="photovis"><img src="https://socialworldfirst.github.io/worldfirst-argentina-sg/assets/approved_2.png" alt="Đội tuyển quốc gia Argentina trong trang phục thi đấu chính thức"></div></div>
     </div>
   </section>
 
+
+  <!-- WHY WORLD CARD (jun22 version) -->
+  <section class="why wrap">
+    <div class="why-head">
+      <div class="weyebrow">Vì sao chọn World Card</div>
+      <h2>Nơi tốt hơn cho khoản chi bạn vẫn đang thực hiện</h2>
+      <p class="lead">World Card là thẻ doanh nghiệp của WorldFirst dành cho thanh toán xuyên biên giới, nhà cung cấp, nền tảng quảng cáo, phần mềm và du lịch, tất cả từ một tài khoản đa tiền tệ.</p>
+    </div>
+    <div class="why-grid"><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><line x1="2.5" y1="9.5" x2="21.5" y2="9.5"/></svg></div><h3 data-why="t1"></h3><p data-why="b1"></p></div><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" r="3"/><circle cx="16.5" cy="16.5" r="3"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><h3 data-why="t2"></h3><p data-why="b2"></p></div><div class="bcard"><div class="bk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 13.5 0 18M12 3c-3 3.5-3 13.5 0 18"/></svg></div><h3 data-why="t3"></h3><p data-why="b3"></p></div></div>
+    <p class="why-tie">Hãy đưa khoản chi bạn vẫn đang thực hiện lên World Card: bạn tiết kiệm phí và nhận hoàn tiền, và cứ mỗi <span class="tbd" data-rv="threshold">US$1,000</span> lại có thêm một lượt quay trúng áo đấu có chữ ký.</p>
+    <div class="promo" id="promoBanner">
+      <span class="promo-badge"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.4 1.3 6.4L12 20.4 6.2 19.6l1.3-6.4L2.7 8.8l6.4-.7z"/></svg>New customer</span>
+      <div class="promo-txt">
+        <div class="promo-main"><span class="promo-rate">5.2% cashback</span> on your first US$3,000 of spend</div>
+        <div class="promo-sub">A limited-period boost for new WorldFirst customers.</div>
+      </div>
+    </div>
+    <p class="why-fine" data-why="fine"></p>
+  </section>
+
   <!-- FOOTER CTA -->
   <section class="fcta">
-    <h2>Bạn đang thanh toán quốc tế? Đây là cơ hội để bạn nhận ngay chiếc áo thi đấu.</h2>
-    <p>Thẻ World Card giúp bạn tiết kiệm chi phí cho mỗi giao dịch toàn cầu. Và cho đến ngày 17/08, chính khoản chi tiêu đó sẽ đưa bạn vào lượt tham gia rút thăm trúng áo thi đấu của Đội tuyển Argentina.</p>
-    <div class="row"><a class="g card-link" href="#">Mở World Card</a><a class="c rules-link" href="https://socialworldfirst.github.io/worldfirst-argentina-sea/rules.html">Xem thể lệ đầy đủ</a></div>
+    <h2>Đã chi tiêu ở nước ngoài? Điều đó có thể giúp bạn trúng một chiếc áo đấu.</h2>
+    <p>World Card giúp bạn tiết kiệm trên mọi giao dịch thanh toán xuyên biên giới. Cho đến ngày 17 tháng 8, chính khoản chi tiêu đó sẽ đưa bạn vào vòng quay.</p>
+    <div class="row"><a class="g card-link" href="#">Mở World Card</a><a class="c rules-link" href="rules.html">Xem thể lệ đầy đủ</a></div>
   </section>
 
   <!-- FOOTER -->
@@ -253,8 +299,8 @@
 <script>
 const RBASE="https://socialworldfirst.github.io";
 const REGIONS={
-  sg:{market:"Singapore",threshold:"$10,000",rules:RBASE+"/worldfirst-argentina-sg/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=en-GB&region=SG"},
-  sea:{market:"Đông Nam Á",threshold:"$1,000",rules:RBASE+"/worldfirst-argentina-sea/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=vi-VN&region=VN"}
+  sg:{market:"Singapore",threshold:"US$10,000",rules:RBASE+"/worldfirst-argentina-sg/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=en-GB&region=SG"},
+  sea:{market:"Đông Nam Á",threshold:"US$1,000",rules:RBASE+"/worldfirst-argentina-vn-vi/rules.html",card:"https://portal.worldfirst.com/worldcard?lang=vi-VN&region=VN"}
 };
 const DEFAULT_REGION="sea";
 function setRegion(k){
@@ -274,6 +320,33 @@ function setRegion(k){
     m.querySelectorAll('[data-region-tab]').forEach(b=>b.addEventListener('click',()=>{setRegion(b.dataset.regionTab);m.classList.remove('open');}));
   }
   setRegion(DEFAULT_REGION);
+})();
+</script>
+
+<script>
+(function(){
+  var WHY={
+  sea:{t1:"Không phí chuyển đổi tiền tệ",b1:"Chi tiêu từ số dư của bạn ở các loại tiền tệ chính mà không mất phí chuyển đổi ngoại tệ.",
+      t2:"Hoàn tiền mỗi tháng",b2:"Nhận hoàn tiền cho chi tiêu kinh doanh quốc tế của bạn, chi trả hàng tháng.",
+      t3:"Thanh toán toàn cầu",b3:"Chi tiêu bằng các loại tiền tệ chính trên hơn 200 quốc gia, với nhiều thẻ cho đội ngũ mà bạn có thể đặt hạn mức và khóa tức thì.",
+      promo:"",fine:"Các tính năng thẻ tuân theo điều khoản của WorldFirst; phí và hoàn tiền khác nhau theo khu vực và loại tiền tệ."},
+  sg:{t1:"Không phí chuyển đổi tiền tệ",b1:"Chi tiêu từ số dư của bạn ở các loại tiền tệ chính mà không mất phí chuyển đổi ngoại tệ.",
+      t2:"Hoàn tiền mỗi tháng",b2:"Nhận hoàn tiền cho chi tiêu kinh doanh quốc tế của bạn, chi trả hàng tháng.",
+      t3:"Thanh toán toàn cầu",b3:"Chi tiêu bằng các loại tiền tệ chính trên hơn 200 quốc gia, với nhiều thẻ cho đội ngũ mà bạn có thể đặt hạn mức và khóa tức thì.",
+      promo:"",fine:"Các tính năng thẻ tuân theo điều khoản của WorldFirst; phí và hoàn tiền khác nhau theo khu vực và loại tiền tệ."}
+};
+  function applyWhy(k){
+    var w=WHY[k]||WHY[Object.keys(WHY)[0]]||{};
+    document.querySelectorAll('[data-why]').forEach(function(e){
+      e.textContent = w[e.getAttribute('data-why')] || '';
+    });
+    var pb=document.getElementById('promoBanner');
+    if(pb) pb.classList.toggle('on', !!w.promo);
+  }
+  function fixCard(){document.querySelectorAll('a.card-link').forEach(function(a){a.setAttribute('href','start.html');});}
+  if(typeof setRegion==='function'){ var _o=setRegion; setRegion=function(k){ _o(k); applyWhy(k); fixCard(); }; }
+  applyWhy(typeof DEFAULT_REGION!=='undefined'?DEFAULT_REGION:Object.keys(WHY)[0]);
+  fixCard();
 })();
 </script>
 </body>
