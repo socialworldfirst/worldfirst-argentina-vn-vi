@@ -344,8 +344,10 @@ function setRegion(k){
     var pb=document.getElementById('promoBanner');
     if(pb) pb.classList.toggle('on', !!w.promo);
   }
-  if(typeof setRegion==='function'){ var _o=setRegion; setRegion=function(k){ _o(k); applyWhy(k); }; }
+  function fixCard(){document.querySelectorAll('a.card-link').forEach(function(a){a.setAttribute('href','start.html');});}
+  if(typeof setRegion==='function'){ var _o=setRegion; setRegion=function(k){ _o(k); applyWhy(k); fixCard(); }; }
   applyWhy(typeof DEFAULT_REGION!=='undefined'?DEFAULT_REGION:Object.keys(WHY)[0]);
+  fixCard();
 })();
 </script>
 </body>
